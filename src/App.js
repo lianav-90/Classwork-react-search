@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import AppContext from './Context/app-context';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Search from './Components/Search';
+import List from './Components/List'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { 
+      data: []
+    }
+  }
+  
+  onDataSet = (data) => {
+    this.setState({ data })
+  }
+
+  render() {
+    const { data } = this.state;
+
+    return (
+      <AppContext.Provider value={{ data, onDataSet: this.onDataSet }}>
+        <div className="App">
+          <div className="search">
+            <Search />
+          </div>
+          <div className="List">
+            <List />
+          </div>
+        </div>
+      </AppContext.Provider> 
+    )
+  }
 }
 
 export default App;

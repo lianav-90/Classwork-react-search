@@ -1,11 +1,7 @@
 .App {
   text-align: center;
+  background-color: #cccccc;
 }
-
-.App-logo {
-  height: 40vmin;
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -16,7 +12,18 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #09d3ac;
+.search, .list {
+  padding: 30px;
 }
+.card {
+  margin: 30px;
+  border: 2px solid #5F5F60 !important;
+}
+p {
+  padding-top: 20px;
+}
+h4 {
+  color: #686868;
+  font-style: italic;
+}
+
